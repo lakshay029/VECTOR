@@ -34,8 +34,6 @@ bool isSafe(int row, int col, vector<vector<char>>&board, int n){
         if(board[i][j] == 'Q'){
             return false;
         }
-        i++;
-        j--;
     }
     return true;
 }
@@ -50,7 +48,7 @@ void solve(vector<vector<char>>&board, int col, int n){
         if(isSafe(row, col, board, n)){
             board[row][col]='Q';
 
-            solve(board, col+1, n);
+            solve(board, col, n);
 
             board[row][col]='.';
         }
